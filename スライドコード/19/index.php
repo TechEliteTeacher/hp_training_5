@@ -13,8 +13,10 @@ $post_query = new WP_Query(
         <?php while ($post_query->have_posts()) : ?>
             <?php $post_query->the_post(); ?>
             <div class="post_content">
-                <?php the_post_thumbnail('thumbnail'); ?>
-                <p><?php the_title(); ?></p>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                    <p><?php the_title(); ?></p>
+                </a>
             </div>
         <?php endwhile; ?>
     </div>

@@ -9,15 +9,10 @@ $post_query = new WP_Query(
 );
 ?>
 <?php if ($post_query->have_posts()) : ?>
-    <div class="post_contents">
-        <?php while ($post_query->have_posts()) : ?>
-            <?php $post_query->the_post(); ?>
-            <div class="post_content">
-                <?php the_post_thumbnail('thumbnail'); ?>
-                <p><?php the_title(); ?></p>
-            </div>
-        <?php endwhile; ?>
-    </div>
+    <?php while ($post_query->have_posts()) : ?>
+        <?php $post_query->the_post(); ?>
+        ここに記事が表示されます
+    <?php endwhile; ?>
 <?php endif; ?>
 <?php wp_reset_postdata(); //サブループが終わる際に記載が必要です 
 ?>
